@@ -1,36 +1,25 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { FlashCardType } from '@lib/types';
 
-const FlashCard: React.FC<FlashCardType> = ({ hangul, romanization }) => {
+const FlashCard: React.FC<FlashCardType> = ({ front, back }) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
-  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleCardClick = () => {
-    if (cardRef.current) {
-      if (isFlipped) {
-        cardRef.current.style.transform = 'rotateY(0deg)';
-        setIsFlipped(false);
-      } else {
-        cardRef.current.style.transform = 'rotateY(180deg)';
-        setIsFlipped(true);
-      }
-    }
-  };
+  const handleCardClick = () => setIsFlipped((prev) => !prev);
 
   return (
     <li
+      role="button"
       onClick={handleCardClick}
-      className="group h-full max-h-[440px] w-full [perspective:1200px]"
+      className="group h-full max-h-[440px] w-full max-w-[440px] cursor-default self-center [perspective:1200px] lg:cursor-pointer"
     >
       <div
-        ref={cardRef}
-        className="relative h-full w-full place-items-center justify-center transition-all duration-500 [transform-style:preserve-3d]"
+        className={`relative h-full w-full items-center justify-center transition-all duration-500 [transform-style:preserve-3d] ${isFlipped ? `[transform:rotateY(180deg)]` : `[transform:rotateY(0deg)]`}`}
       >
         <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl bg-white [backface-visibility:hidden]">
-          <span className="select-none text-6xl">{hangul}</span>
+          <span className="text-6xl">{front}</span>
         </div>
         <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl bg-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <span className="select-none text-4xl">{romanization}</span>
+          <span className="text-4xl">{back}</span>
         </div>
       </div>
     </li>

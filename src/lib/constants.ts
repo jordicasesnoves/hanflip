@@ -2,103 +2,103 @@ import { FlashCardType, FlashCardGroupsType } from './types';
 
 export const SIMPLE_VOWELS: FlashCardType[] = [
   {
-    hangul: 'ㅏ',
-    romanization: 'a',
+    front: 'ㅏ',
+    back: 'a',
   },
   {
-    hangul: 'ㅑ',
-    romanization: 'ya',
+    front: 'ㅑ',
+    back: 'ya',
   },
   {
-    hangul: 'ㅓ',
-    romanization: 'eo',
+    front: 'ㅓ',
+    back: 'eo',
   },
   {
-    hangul: 'ㅕ',
-    romanization: 'yeo',
+    front: 'ㅕ',
+    back: 'yeo',
   },
   {
-    hangul: 'ㅗ',
-    romanization: 'o',
+    front: 'ㅗ',
+    back: 'o',
   },
   {
-    hangul: 'ㅛ',
-    romanization: 'yo',
+    front: 'ㅛ',
+    back: 'yo',
   },
   {
-    hangul: 'ㅜ',
-    romanization: 'u',
+    front: 'ㅜ',
+    back: 'u',
   },
   {
-    hangul: 'ㅠ',
-    romanization: 'yu',
+    front: 'ㅠ',
+    back: 'yu',
   },
   {
-    hangul: 'ㅡ',
-    romanization: 'eu',
+    front: 'ㅡ',
+    back: 'eu',
   },
   {
-    hangul: 'ㅣ',
-    romanization: 'i',
+    front: 'ㅣ',
+    back: 'i',
   },
 ];
 
 export const SIMPLE_CONSONANTS: FlashCardType[] = [
   {
-    hangul: 'ㄱ',
-    romanization: ['g', 'k'],
+    front: 'ㄱ',
+    back: 'g',
   },
   {
-    hangul: 'ㄴ',
-    romanization: ['n'],
+    front: 'ㄴ',
+    back: 'n',
   },
   {
-    hangul: 'ㄷ',
-    romanization: ['d', 't'],
+    front: 'ㄷ',
+    back: `'d' 't'`,
   },
   {
-    hangul: 'ㄹ',
-    romanization: ['r', 'l'],
+    front: 'ㄹ',
+    back: `'r' 'l'`,
   },
   {
-    hangul: 'ㅁ',
-    romanization: ['m'],
+    front: 'ㅁ',
+    back: 'm',
   },
   {
-    hangul: 'ㅂ',
-    romanization: ['b', 'p'],
+    front: 'ㅂ',
+    back: `'b' 'p'`,
   },
   {
-    hangul: 'ㅅ',
-    romanization: ['s'],
+    front: 'ㅅ',
+    back: 's',
   },
   {
-    hangul: 'ㅇ',
-    romanization: ['-'],
+    front: 'ㅇ',
+    back: 'ng',
   },
   {
-    hangul: 'ㅈ',
-    romanization: ['j'],
+    front: 'ㅈ',
+    back: 'j',
   },
   {
-    hangul: 'ㅊ',
-    romanization: ['ch'],
+    front: 'ㅊ',
+    back: 'ch',
   },
   {
-    hangul: 'ㅋ',
-    romanization: ['g', 'k'],
+    front: 'ㅋ',
+    back: 'k',
   },
   {
-    hangul: 'ㅌ',
-    romanization: ['d', 't'],
+    front: 'ㅌ',
+    back: 't',
   },
   {
-    hangul: 'ㅍ',
-    romanization: ['p', 'pp'],
+    front: 'ㅍ',
+    back: 'p',
   },
   {
-    hangul: 'ㅎ',
-    romanization: ['h'],
+    front: 'ㅎ',
+    back: 'h',
   },
 ];
 
