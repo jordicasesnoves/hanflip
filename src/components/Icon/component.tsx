@@ -1,4 +1,4 @@
-import { cloneElement } from 'react';
+import React, { cloneElement } from 'react';
 import { IconProps, IconSize } from './types';
 
 const Icon: React.FC<IconProps> = ({ size = 'medium', children, ...props }) => {
@@ -10,7 +10,7 @@ const Icon: React.FC<IconProps> = ({ size = 'medium', children, ...props }) => {
     large: 32,
   };
 
-  const IconComponent = cloneElement(children, {
+  const IconComponent = cloneElement(children as never, {
     width: SizeMap[size],
     ...props,
   });
