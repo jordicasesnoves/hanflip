@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FlashCardProps } from './types';
 
 const FlashCard: React.FC<FlashCardProps> = ({
@@ -7,11 +7,29 @@ const FlashCard: React.FC<FlashCardProps> = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
-  const handleCardClick = () => setIsFlipped((prev) => !prev);
+  const toggleFlipped = useCallback(
+    () => setIsFlipped((prev) => !prev),
+    [setIsFlipped]
+  );
+
+  const handleCardClick = () => toggleFlipped();
+
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === ' ' && isActive) toggleFlipped();
+    },
+    [toggleFlipped, isActive]
+  );
 
   useEffect(() => {
-    if (front && back) setIsFlipped(false);
-  }, [front, back]);
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [handleKeyPress]);
+
+  useEffect(() => {
+    if (!isActive && isFlipped) setIsFlipped(false);
+  }, [isActive, isFlipped]);
 
   return (
     <li
