@@ -11,9 +11,7 @@ import NavigationButton from './components/NavigationButton';
 
 const FlashCards: React.FC<FlashCardsProps> = ({ type }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [flashCardsData, setFlashCardsData] = useState(
-    FLASH_CARDS_MAP[type] || []
-  );
+  const [flashCardsData, setFlashCardsData] = useState(FLASH_CARDS_MAP[type] || []);
 
   const isPrevDisabled = currentIndex === 0;
 
