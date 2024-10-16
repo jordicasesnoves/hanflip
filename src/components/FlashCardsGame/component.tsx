@@ -116,7 +116,7 @@ const FlashCards: React.FC<FlashCardsProps> = ({ type }) => {
           })}
         </ul>
       </div>
-      <div className="flex w-full max-w-[440px] justify-between gap-12 px-6 py-12">
+      <div className="flex w-full max-w-[440px] justify-between gap-12 px-6 py-6">
         <NavigationButton onClick={handlePrevCard} disabled={isPrevDisabled}>
           <Icon>
             <LeftIcon />
