@@ -86,15 +86,15 @@ const FlashCards: React.FC<FlashCardsProps> = ({ type }) => {
                 ? index === 0
                 : index === currentIndex + 1;
             const x = () => {
-              const distance = 100;
-              if (isPrevCard) return distance;
+              const distance = 30;
+              if (isPrevCard) return -distance;
               if (isCardActive) return 0;
-              if (isNextCard) return -distance;
+              if (isNextCard) return distance;
               return 0;
             };
             const opacity = () => {
               if (isCardActive) return 1;
-              if (isPrevCard || isNextCard) return 0;
+              if (isPrevCard || isNextCard) return 0.5;
               return 0;
             };
             return (
